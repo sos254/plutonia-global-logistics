@@ -1,3 +1,5 @@
+// src/app/layout.tsx
+
 export const metadata = {
   title: "Plutonia Global Logistics Ltd — AI-Powered Global Sourcing",
   description:
@@ -41,27 +43,42 @@ export const metadata = {
     apple: "/apple-touch-icon.png",
   },
   metadataBase: new URL("https://www.plutoniaglobal.com"),
-  <script
-  type="application/ld+json"
-  dangerouslySetInnerHTML={{
-    __html: JSON.stringify({
-      "@context": "https://schema.org",
-      "@type": "Organization",
-      "name": "Plutonia Global Logistics Ltd",
-      "url": "https://www.plutoniaglobal.com",
-      "logo": "https://www.plutoniaglobal.com/logo.png",
-      "contactPoint": {
-        "@type": "ContactPoint",
-        "telephone": "+86 15920439640",
-        "contactType": "customer support",
-        "areaServed": "Worldwide",
-        "availableLanguage": ["English", "Chinese", "Arabic"]
-      },
-      "sameAs": [
-        "https://www.linkedin.com/company/plutonia-global",
-        "https://www.facebook.com/plutoniaglobal"
-      ]
-    })
-  }}
-/>
+};
 
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return (
+    <html lang="en">
+      <head>
+        {/* ✅ Structured Data for Rich Results */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              name: "Plutonia Global Logistics Ltd",
+              url: "https://www.plutoniaglobal.com",
+              logo: "https://www.plutoniaglobal.com/logo.png",
+              contactPoint: {
+                "@type": "ContactPoint",
+                telephone: "+86 15920439640",
+                contactType: "customer support",
+                areaServed: "Worldwide",
+                availableLanguage: ["English", "Chinese", "Arabic"],
+              },
+              sameAs: [
+                "https://www.linkedin.com/company/plutonia-global",
+                "https://www.facebook.com/plutoniaglobal",
+              ],
+            }),
+          }}
+        />
+      </head>
+      <body>{children}</body>
+    </html>
+  );
+}
