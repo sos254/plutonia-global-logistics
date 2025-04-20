@@ -1,0 +1,16 @@
+{
+  "name": "Plutonia Global Logistics Ltd",
+  "short_name": "Plutonia",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0A2463",
+  "theme_color": "#FFD700",
+  "description": "AI-powered global sourcing and logistics company.",
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/x-icon"
+    }
+  ]
+}
